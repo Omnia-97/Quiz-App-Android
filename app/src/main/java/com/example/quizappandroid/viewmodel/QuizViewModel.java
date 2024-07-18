@@ -7,11 +7,13 @@ import com.example.quizappandroid.model.QuestionList;
 import com.example.quizappandroid.repository.QuizRepository;
 
 public class QuizViewModel extends ViewModel {
-    QuizRepository quizRepository = new QuizRepository();
-    LiveData<QuestionList> questionListLiveData ;
+
+    QuizRepository repository = new QuizRepository();
+
+    LiveData<QuestionList> questionListLiveData;
 
     public QuizViewModel() {
-    questionListLiveData = quizRepository.getQuestionsFromApi();
+        questionListLiveData = repository.getQuestionsFromApi();
     }
 
     public LiveData<QuestionList> getQuestionListLiveData() {
